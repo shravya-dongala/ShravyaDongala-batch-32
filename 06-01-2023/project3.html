@@ -1,0 +1,5 @@
+<script>
+    amount = 100
+    Environment = prompt( 'Enter Environment : div,stge,prod,test')
+    let sendamount=Environment=="div"?amount*110/100:Environment=="stage"?amount*130/100:Environment=="test"?amount*120/100:Environment=="prod"?log(amount*105/100):amount
+</script>
