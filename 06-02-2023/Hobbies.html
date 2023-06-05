@@ -1,0 +1,31 @@
+<script>
+    let Z = ['Painting', 'Dancing', 'Crafts'];
+    
+    function addhobbies() {
+      var Y = ['Singing', 'drawing'];
+      Z.push(...Y);
+    }
+    
+    function deletehobbies() {
+      var X = 'Dancing';
+      var index = Z.indexOf(X);
+      if (index !== -1) {
+        Z.splice(index, 1);
+      }
+    }
+    
+    var choice = prompt("Please enter your choice (hobbies, addhobbies, deletehobbies):");
+    
+    if (choice === "hobbies") {
+      console.log(Z);
+    } else if (choice === "addhobbies") {
+      addhobbies();
+      console.log(Z);
+    } else if (choice === "deletehobbies") {
+      deletehobbies();
+      console.log(Z);
+    } else {
+      console.log("Invalid choice.");
+    }
+    </script>
+    
