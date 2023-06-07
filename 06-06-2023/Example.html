@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Shravya </title>
+  <script>
+    function displayProfile() {
+      var firstName = document.getElementById("first-name").value;
+      var lastName = document.getElementById("last-name").value;
+      var email = document.getElementById("email").value;
+      var dob = document.getElementById("dob").value;
+      var phoneNumber = document.getElementById("phone-number").value;
+      var gender = [];
+      var hobbies = [];
+
+      if (document.getElementById("gender-male").checked) {
+        gender.push(document.getElementById("gender-male").value);
+      }
+      if (document.getElementById("gender-female").checked) {
+        gender.push(document.getElementById("gender-female").value);
+      }
+      if (document.getElementById("hobby-reading").checked) {
+        hobbies.push(document.getElementById("hobby-reading").value);
+      }
+      if (document.getElementById("hobby-gardening").checked) {
+        hobbies.push(document.getElementById("hobby-gardening").value);
+      }
+
+      var profile = "First Name: " + firstName + "<br>" +
+                    "Last Name: " + lastName + "<br>" +
+                    "Email: " + email + "<br>" +
+                    "Date of Birth: " + dob + "<br>" +
+                    "Phone Number: " + phoneNumber + "<br>" +
+                    "Gender: " + gender.join(", ") + "<br>" +
+                    "Hobbies: " + hobbies.join(", ");
+      document.getElementById("display-profile").innerHTML = profile;
+    }
+  </script>
+</head>
+<body>
+  <h1> Shravya </h1>
+  <div>
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" />
+  </div>
+  <div>
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" />
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" />
+  </div>
+  <div>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" />
+  </div>
+  <div>
+    <label for="phone-number">Phone Number:</label>
+    <input type="text" id="phone-number" />
+  </div>
+  <div>
+    <label>Gender:</label>
+    <input type="checkbox" id="gender-male" value="Male" /> <label for="gender-male">Male</label><br>
+    <input type="checkbox" id="gender-female" value="Female" /> <label for="gender-female">Female</label><br>
+  </div>
+  <div>
+    <label>Hobbies:</label>
+    <input type="checkbox" id="hobby-reading" value="Reading" /> <label for="hobby-reading">Reading</label><br>
+    <input type="checkbox" id="hobby-gardening" value="Gardening" /> <label for="hobby-gardening">Gardening</label><br>
+  </div>
+  <button onclick="displayProfile()">Submit</button>
+  <div id="display-profile"></div>
+</body>
+</html>
